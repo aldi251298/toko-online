@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🛒 E-Commerce Demo (Next.js)
 
-## Getting Started
+Demo website toko online dengan alur belanja lengkap, mulai dari penelusuran produk, pengelolaan keranjang, hingga proses checkout dengan simulasi pembayaran berhasil dan gagal.
+Proyek ini dibuat sebagai showcase frontend development dengan fokus pada user experience, responsivitas, dan alur aplikasi yang realistis.
 
-First, run the development server:
+🔗 Live Demo:
+https://toko-online-three-nu.vercel.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+✨ Fitur Utama
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Product listing & kategori
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Keranjang belanja (add, update, remove item)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Checkout flow end-to-end
 
-## Learn More
+Simulasi pembayaran:
 
-To learn more about Next.js, take a look at the following resources:
+Pembayaran berhasil
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Pembayaran gagal (error handling)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Feedback UI yang jelas untuk setiap status
 
-## Deploy on Vercel
+Fully responsive (mobile, tablet, desktop)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🎯 Tujuan Proyek
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Proyek ini bertujuan untuk mensimulasikan alur e-commerce nyata tanpa backend dan payment gateway sungguhan, sehingga dapat digunakan sebagai:
+
+Portfolio frontend developer
+
+Demo UI/UX alur belanja online
+
+Rapid prototyping e-commerce interface
+
+Fokus utama proyek adalah alur pengguna (user flow) dan penanganan edge case, bukan sekadar tampilan visual.
+
+🛠️ Tech Stack
+
+Next.js
+
+TypeScript
+
+Tailwind CSS
+
+Development workflow dipercepat dengan bantuan AI coding assistant, sementara arsitektur, penyesuaian UI, dan logika aplikasi dikontrol sepenuhnya oleh developer.
+
+📌 Catatan
+
+Proyek ini menggunakan mock data dan simulasi pembayaran
+
+Tidak terhubung dengan database atau payment gateway asli
+
+Tidak menyimpan data pengguna
+
+📄 Lisensi
+
+Proyek ini dibuat untuk keperluan demo dan portfolio.
