@@ -1,34 +1,34 @@
-"use client"; // Wajib untuk animasi
+"use client"; 
 
 import React from 'react';
 import Link from 'next/link';
 import { products } from '@/data/products';
 import { ArrowRight, Smartphone, Shirt, Watch, Monitor, ShoppingBag, Zap, Truck, ShieldCheck, Clock, CreditCard } from 'lucide-react';
-import { motion } from 'framer-motion'; // Import Animasi
-import ScrollReveal from '@/components/ScrollReveal'; // Import Pembungkus Ajaib
+import { motion } from 'framer-motion'; 
+import ScrollReveal from '@/components/ScrollReveal'; 
 
 export default function Home() {
-  // Filter Data
+  
   const electronics = products.filter(p => p.category === 'Elektronik').slice(0, 4);
   const mens = products.filter(p => p.category === 'Pria').slice(0, 4);
   const womens = products.filter(p => p.category === 'Wanita').slice(0, 4);
 
-  // Komponen Kartu Produk (Dengan Hover Effect Zoom)
+ 
   const ProductCard = ({ product }: { product: any }) => (
     <Link href={`/produk/${product.id}`}>
       <motion.div 
-        whileHover={{ y: -10 }} // Kalau di-hover naik dikit
+        whileHover={{ y: -10 }} 
         className="group bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col"
       >
         <div className="relative h-48 bg-gray-100 overflow-hidden">
           <motion.img 
-            whileHover={{ scale: 1.1 }} // Gambar membesar pas di-hover
+            whileHover={{ scale: 1.1 }} 
             transition={{ duration: 0.5 }}
             src={product.image} 
             alt={product.name} 
             className="w-full h-full object-cover" 
           />
-          {/* Badge Kategori */}
+          
           <span className="absolute top-2 left-2 bg-white/80 backdrop-blur text-xs font-bold px-2 py-1 rounded text-gray-800">
             {product.category}
           </span>
@@ -49,9 +49,9 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gray-50 pb-20 overflow-hidden">
       
-      {/* 1. HERO BANNER (Animasi Masuk) */}
+      
       <div className="relative bg-gray-900 h-[500px] sm:h-[600px] flex items-center justify-center overflow-hidden">
-        {/* Background Parallax Effect */}
+        
         <motion.div 
           initial={{ scale: 1.2 }}
           animate={{ scale: 1 }}
@@ -109,7 +109,7 @@ export default function Home() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 relative z-20">
         
-        {/* 2. MENU KATEGORI (Slide Up) */}
+        
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -132,14 +132,14 @@ export default function Home() {
               className="flex flex-col items-center cursor-pointer group"
             >
               <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-3 ${item.color} shadow-sm group-hover:shadow-md transition-all`}>
-                {React.cloneElement(item.icon as React.ReactElement, { size: 24 })}
+                {React.cloneElement(item.icon as any, { size: 24 })}
               </div>
               <span className="text-xs font-semibold text-gray-600 text-center">{item.name}</span>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* 3. SECTION: GADGET (Pakai ScrollReveal) */}
+        
         <ScrollReveal>
           <div className="mb-20">
             <div className="flex justify-between items-end mb-8">
@@ -157,7 +157,7 @@ export default function Home() {
           </div>
         </ScrollReveal>
 
-        {/* 4. BANNER PROMO (Parallax Mouse Move - Sederhana) */}
+        
         <ScrollReveal>
           <div className="bg-gray-900 rounded-3xl p-10 md:p-16 mb-20 relative overflow-hidden group">
             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550009158-9ebf69173e03?w=1200&q=80')] bg-cover bg-center opacity-30 group-hover:scale-105 transition-transform duration-1000"></div>
@@ -172,10 +172,10 @@ export default function Home() {
           </div>
         </ScrollReveal>
 
-        {/* 5. SECTION: FASHION PRIA & WANITA */}
+       
         <ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
-            {/* Pria */}
+            
             <div>
               <div className="flex justify-between items-end mb-6">
                  <h2 className="text-2xl font-bold text-gray-900">Fashion Pria</h2>
@@ -186,7 +186,7 @@ export default function Home() {
               </div>
             </div>
             
-            {/* Wanita */}
+            
             <div>
               <div className="flex justify-between items-end mb-6">
                  <h2 className="text-2xl font-bold text-gray-900">Fashion Wanita</h2>
@@ -199,7 +199,7 @@ export default function Home() {
           </div>
         </ScrollReveal>
 
-        {/* 6. TRUST SIGNALS (Footer Banner) */}
+        
         <ScrollReveal>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-12 border-t border-gray-200">
              {[
