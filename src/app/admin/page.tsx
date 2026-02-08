@@ -64,7 +64,7 @@ export default function AdminDashboard() {
           <div key={idx} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
             <div className="flex justify-between items-start mb-4">
               <div className={`p-3 rounded-xl bg-gradient-to-br ${stat.color} text-white shadow-lg`}>
-                 {React.cloneElement(stat.icon as React.ReactElement, { size: 22 })}
+                 {React.cloneElement(stat.icon as any, { size: 22 })}
               </div>
               <button className="text-gray-300 hover:text-gray-600"><MoreVertical size={18} /></button>
             </div>
