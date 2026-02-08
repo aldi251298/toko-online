@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { ShoppingCart, Check } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 
-// Kita butuh ID produk dikirim dari luar
+
 export default function AddToCartBtn({ productId }: { productId: number }) {
   const { addToCart } = useCart();
   const [isAdded, setIsAdded] = useState(false);
@@ -12,7 +12,7 @@ export default function AddToCartBtn({ productId }: { productId: number }) {
   const handleClick = () => {
     addToCart(productId);
     
-    // Efek visual: Tombol berubah jadi "Berhasil" selama 2 detik
+    
     setIsAdded(true);
     setTimeout(() => setIsAdded(false), 2000);
   };

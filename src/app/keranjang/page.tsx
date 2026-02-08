@@ -9,19 +9,18 @@ import { Trash2, ArrowRight } from 'lucide-react';
 export default function CartPage() {
   const { cartItems, removeFromCart } = useCart();
 
-  // MENGHITUNG TOTAL HARGA
-  // 1. Gabungkan data keranjang (cuma ID & Qty) dengan data lengkap produk (Harga, Gambar)
+  
   const cartDetails = cartItems.map((item) => {
     const product = products.find((p) => p.id === item.productId);
     return {
-      ...product!, // Tanda seru artinya "kita yakin produknya ada"
+      ...product!, 
       quantity: item.quantity,
     };
   });
 
-  // 2. Hitung total belanja
+  
   const subtotal = cartDetails.reduce((total, item) => total + (item.price * item.quantity), 0);
-  const tax = subtotal * 0.11; // PPN 11%
+  const tax = subtotal * 0.11; 
   const total = subtotal + tax;
 
   if (cartItems.length === 0) {
@@ -43,23 +42,23 @@ export default function CartPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           
-          {/* KOLOM KIRI: Daftar Barang */}
+          
           <div className="lg:col-span-2 space-y-4">
             {cartDetails.map((item) => (
               <div key={item.id} className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex gap-4 items-center">
-                {/* Gambar Kecil */}
+                
                 <div className="w-24 h-24 bg-gray-100 rounded-md overflow-hidden flex-shrink-0">
                   <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
                 </div>
                 
-                {/* Info */}
+                
                 <div className="flex-1">
                   <h3 className="font-semibold text-gray-800">{item.name}</h3>
                   <p className="text-gray-500 text-sm mb-2">{item.category}</p>
                   <p className="text-blue-600 font-bold">Rp {item.price.toLocaleString('id-ID')}</p>
                 </div>
 
-                {/* Kontrol Jumlah */}
+                
                 <div className="flex items-center gap-4">
                   <span className="text-gray-600 font-medium">x{item.quantity}</span>
                   <button 
@@ -74,7 +73,7 @@ export default function CartPage() {
             ))}
           </div>
 
-          {/* KOLOM KANAN: Ringkasan Belanja */}
+          
           <div className="lg:col-span-1">
             <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100 sticky top-24">
               <h2 className="text-lg font-bold text-gray-900 mb-6">Ringkasan Pesanan</h2>

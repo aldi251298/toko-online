@@ -5,18 +5,18 @@ import Link from 'next/link';
 import { ChevronLeft, ShoppingCart, Star } from 'lucide-react';
 import AddToCartBtn from '@/components/AddToCartBtn';
 
-// 1. Definisikan tipe params sebagai Promise (aturan baru Next.js 15)
+
 interface ProductDetailProps {
   params: Promise<{ id: string }>;
 }
 
-// 2. Tambahkan kata kunci 'async' di depan function
+
 export default async function ProductDetail({ params }: ProductDetailProps) {
   
-  // 3. Kita "await" (tunggu) dulu params-nya dibuka
+ 
   const { id } = await params;
 
-  // 4. Sekarang id sudah aman untuk dipakai
+  
   const product = products.find((p) => p.id === parseInt(id));
 
   if (!product) {
@@ -34,7 +34,7 @@ export default async function ProductDetail({ params }: ProductDetailProps) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           
-          {/* Gambar Produk */}
+         
           <div className="bg-gray-100 rounded-2xl overflow-hidden shadow-lg aspect-square relative">
              <img 
               src={product.image} 
@@ -43,7 +43,7 @@ export default async function ProductDetail({ params }: ProductDetailProps) {
             />
           </div>
 
-          {/* Info Produk */}
+          
           <div>
             <span className="text-blue-600 font-semibold tracking-wide uppercase text-sm">
               {product.category}

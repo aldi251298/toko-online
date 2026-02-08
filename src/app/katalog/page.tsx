@@ -9,27 +9,27 @@ import { Search, SlidersHorizontal, ShoppingBag } from 'lucide-react';
 function CatalogContent() {
   const searchParams = useSearchParams();
   
-  // Ambil query dari URL (misal: ?q=sepatu)
+  
   const queryFromUrl = searchParams.get('q') || "";
 
-  // State
+  
   const [selectedCategory, setSelectedCategory] = useState("Semua");
   const [searchQuery, setSearchQuery] = useState(queryFromUrl); 
   const [sortOption, setSortOption] = useState("default");
 
-  // --- PERBAIKAN UTAMA DI SINI ---
+  
   useEffect(() => {
-    // Kita cek dulu: Apakah nilai di URL BEDA dengan yang ada di State sekarang?
+    
     setSearchQuery((prevVal) => {
       if (prevVal !== queryFromUrl) {
-        // Kalau beda, baru kita update (Reset Kategori juga)
+       
         setSelectedCategory("Semua");
         return queryFromUrl;
       }
-      // Kalau sama, kembalikan nilai lama (JANGAN update, biar gak error)
+      
       return prevVal;
     });
-  }, [queryFromUrl]); // Kita pantau variabel string-nya langsung, bukan objek searchParams
+  }, [queryFromUrl]); 
 
   const categories = ["Semua", "Pria", "Wanita", "Elektronik", "Olahraga", "Aksesoris"];
 
@@ -58,7 +58,7 @@ function CatalogContent() {
           <p className="text-gray-500 text-sm">Menampilkan {filteredProducts.length} produk</p>
         </div>
 
-        {/* TOOLBAR */}
+        
         <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 mb-8 sticky top-20 z-30">
           <div className="flex flex-col md:flex-row gap-4 justify-between">
             
@@ -104,13 +104,13 @@ function CatalogContent() {
           </div>
         </div>
 
-        {/* GRID PRODUK */}
+        
         {filteredProducts.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {filteredProducts.map((product) => (
               <Link href={`/produk/${product.id}`} key={product.id} className="group bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300">
                 <div className="relative h-64 w-full bg-gray-200">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  
                   <img 
                     src={product.image} 
                     alt={product.name}

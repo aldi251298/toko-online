@@ -12,7 +12,7 @@ export default function LoginPage() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // Cek kalau sudah login, langsung lempar ke admin
+  
   useEffect(() => {
     if (localStorage.getItem("isAdmin") === "true") {
       router.push("/admin");
@@ -24,10 +24,10 @@ export default function LoginPage() {
     setLoading(true);
     setError("");
 
-    // Simulasi Cek Password (Delay 1 detik biar keren)
+    
     setTimeout(() => {
       if (username === "admin" && password === "admin") {
-        // SIMPAN STATUS LOGIN
+        
         localStorage.setItem("isAdmin", "true");
         router.push("/admin");
       } else {
@@ -41,7 +41,7 @@ export default function LoginPage() {
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
       <div className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md border border-gray-200">
         
-        {/* Header Login */}
+        
         <div className="text-center mb-8">
           <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-blue-600">
             <ShieldCheck size={32} />
@@ -50,7 +50,7 @@ export default function LoginPage() {
           <p className="text-gray-500 text-sm">Masuk untuk mengelola toko</p>
         </div>
 
-        {/* Form */}
+        
         <form onSubmit={handleLogin} className="space-y-6">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Username</label>
@@ -82,7 +82,7 @@ export default function LoginPage() {
             </div>
           </div>
 
-          {/* Pesan Error */}
+          
           {error && (
             <div className="bg-red-50 text-red-600 text-sm p-3 rounded-lg text-center animate-pulse border border-red-200">
               {error}
@@ -102,7 +102,7 @@ export default function LoginPage() {
           </button>
         </form>
 
-        {/* HINT / BOCORAN (Supaya portofolio bisa dites orang lain) */}
+        
         <div className="mt-8 pt-6 border-t border-gray-100 text-center">
           <p className="text-xs text-gray-400 uppercase tracking-widest mb-2 font-semibold">Demo Credentials</p>
           <div className="inline-block bg-blue-50 px-4 py-2 rounded-lg border border-blue-100">
